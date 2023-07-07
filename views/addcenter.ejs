@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Center</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Covid</a>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/addcenter">Add Centers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dosagedetail">Dosage Details</a>
+                </li>
+            </ul>
+            <a href="/login"><span class="navbar-text">Logout</span></a>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="addcenterform col-sm-6">    
+            <div class="card bg-light">
+                <div class="card-body">
+                    <form action="#" method="POST">
+                    <div class="form-group row">
+                        <label for="centerid" class="col-sm-4 col-form-label">Center ID</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="centerid" id="centerid" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-4 col-form-label">Center Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="address" class="col-sm-4 col-form-label">Address</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="address" id="address" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="wfrom" class="col-sm-4 col-form-label">Work From</label>
+                        <div class="col-sm-8">
+                            <input type="time" name="wfrom" id="wfrom" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="wto" class="col-sm-4 col-form-label">Work To</label>
+                        <div class="col-sm-8">
+                            <input type="time" name="wto" id="wto" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="contact" class="col-sm-4 col-form-label">Contact</label>
+                        <div class="col-sm-8">
+                            <input type="tel" name="contact" id="contact" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

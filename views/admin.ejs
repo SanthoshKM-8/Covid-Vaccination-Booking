@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Covid</a>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/addcenter">Add Centers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dosagedetail">Dosage Details</a>
+                </li>
+            </ul>
+            <a href="/login"><span class="navbar-text">Logout</span></a>
+        </div>
+    </nav>
+    <div class="row" style="margin: 0%;padding: 5px; width: 100%;">
+
+        <% if(centers.length == 0) { %>
+            <h3 style="text-align: center; width: 100%;">No Centers Available...</h3>
+        <% } else { 
+            centers.forEach(function(center) { %>
+                <div class="col-sm-3">
+                    <div class="card bg-light text-center">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= center.Name %></h5>
+                            <p class="card-text"><%= center.Address %></p>
+                            <p class="card-text"><b>Contact : </b><%= center.Contact %></p>
+                            <p class="card-text"><b>Working Hours : </b><%= center.WorkFrom %> - <%= center.WorkTo %></p>
+                            <a href="/remove/<%= center.CenterId %>" class="btn btn-primary">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            <% });
+        } %>
+
+    </div>
+</body>
+</html>
